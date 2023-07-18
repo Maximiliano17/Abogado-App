@@ -213,4 +213,27 @@
             margin-top: 0%;
         }
 
+                
+        .tarjeta p{
+            width: 90%;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .tarjetaa p{
+            width: 90%;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .tarjeta h3{
+            font-size: 25px;
+            color:rgb(209, 148, 34);
+        } 
+
+        .tarjetaa h3{
+            font-size: 25px;
+            color:rgb(209, 148, 34);
+        }
+
 }
