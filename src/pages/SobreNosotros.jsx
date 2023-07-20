@@ -1,53 +1,80 @@
+// Core
+
+import { useEffect } from 'react';
+
+// Animation
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 //Styles
-import styles from "../modules/Sobre.module.css"
+import styles from "../modules/Sobre.module.css";
 //Imagenes
-import img from "../assets/img/1.jpg"
-import fondo from "../assets/img/fondo2.jpg" 
+import img from "../assets/img/1.jpg";
+import fondo from "../assets/img/fondo2.jpg";
 
 function Sobre() {
 
-    return (
-      <>
-      <div className={styles.container}>
-      <section className={styles.foto}>
-          <img src={img} alt="Foto" />    
-        </section> 
-      <section className={styles.informacion}>
-         <h2>We know divorce is tough.</h2>
-         <p>
-           We work closely with our clients throughout every stage of what is usually a long and tough ordeal so that they can accomplish their goals and desires. With our combined experience of handling complex trials and litigations for over 30 years, you can trust us to be forthright and diligent in meeting your needs.
-         </p>
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  return (
+    <>
+      <div className={styles.container} id='informacion'>
+        <section className={styles.foto} data-aos="zoom-in">
+          <img src={img} alt="Foto" />
         </section>
-      </div> 
-      <div className={styles.sobre}>
-       <h2>What we focus on</h2>
-       <section className={styles.tarjetas}>
-         <div className={styles.tarjetaa}>
-          <h3>Child Custody</h3>
-          <p>
-            What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
+        <section className={styles.informacion}>
+          <h2 data-aos="fade-down">We know divorce is tough.</h2>
+          <p data-aos="fade-up">
+            We work closely with our clients throughout every stage of what is
+            usually a long and tough ordeal so that they can accomplish their
+            goals and desires. With our combined experience of handling complex
+            trials and litigations for over 30 years, you can trust us to be
+            forthright and diligent in meeting your needs.
           </p>
-         </div>
-         <div className={styles.tarjeta}>
-          <h3>Divorce</h3>
-          <p>
-          What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
-          </p>
-         </div>
-         <div className={styles.tarjeta}>
-          <h3>Complex Litigation</h3>
-          <p>
-          What's special about your services or offerings? Give your audience a reason to choose you over your competition. Cite it above, then flesh it out here.
-          </p>
-         </div>
-         <div className={styles.tarjeta}>
-          <img src={fondo} alt="Fondo" />
-         </div>
-       </section>
+        </section>
       </div>
-      </>
-    )
-  }
-  
-  export default Sobre
-  
+      <div className={styles.sobre} id='odr'>
+        <h2>Mas sobre un ODR</h2>
+        <section className={styles.tarjetas}>
+          <div className={styles.tarjeta} data-aos="flip-left">
+            <h3>¿Que es?</h3>
+            <p>
+              ODR se refiere al diseño e implementación de sistemas resolución
+              de conflictos, dentro y fuera de las cortes y juzgados, que operan
+              en internet y que usan tecnologías de la información y las
+              comunicaciones.
+            </p>
+          </div>
+          <div className={styles.tarjeta} data-aos="flip-left">
+            <h3>¿Como Funciona?</h3>
+            <p>
+              Las personas pueden resolver sus controversias a través de
+              internet ya sea con una negociación automatizada, mediación o
+              conciliación, e incluso a través del arbitraje. En muchos casos ni
+              siquiera necesitan de la asistencia de un abogado.
+            </p>
+          </div>
+          <div className={styles.tarjeta} data-aos="flip-left">
+            <h3>Ventajas</h3>
+            <ul>
+              <li>Accesibilidad</li>
+              <li>Eficiencia</li>
+              <li>Costo reducido</li>
+              <li>Flexibilidad de tiempo</li>
+              <li>Confidencialidad</li>
+              <li>Mayor probabilidad de acuerdos</li>
+            </ul>
+          </div>
+          <div className={styles.tarjeta} data-aos="flip-left">
+            <img src={fondo} alt="Fondo" />
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}
+
+export default Sobre;
